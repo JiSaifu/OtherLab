@@ -113,7 +113,7 @@
     }
 ***
 
-## <font color="red">code記法</font>
+## <font color="red">インラインコード</font>
 - 記法：
 ```Markdown
 <!-- バッククォートで文字列を囲む -->
@@ -121,6 +121,21 @@
 ```
 - 結果：  
 インストールコマンド`gem install hoge`です。
+***
+
+## <font color="red">コードブロック</font>
+- 記法：  
+`` ```[言語] ``  
+コード  
+`` ``` ``  
+GitHubで利用できる言語の一覧：[linguist/lib/linguist/languages.yml](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
+
+- 結果：  
+```Java
+public static void main(String[] args) {
+    System.out.println("Hello World!");
+}
+```
 ***
 
 ## <font color="red">強調:\<em></font>
@@ -157,6 +172,27 @@ normal ___italic + bold___ normal
 - 結果：  
 normal ***italic + bold*** normal  
 normal ___italic + bold___ normal
+***
+
+## <font color="red">打消し線</font>
+- 記法：
+```Markdown
+<!-- ~(チルダ)を2個で文字列を囲む -->
+~~打消し~~
+```
+- 結果：  
+~~打消し~~
+***
+
+## <font color="red">ファイルの挿入</font>
+- 記法：
+```Markdown
+![代替テキスト](https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png)
+```
+- 結果：  
+![Google](https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png)
+
+![Google](https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.xxx)
 ***
 
 ## <font color="red">水平線</font>
@@ -212,3 +248,88 @@ ___
 [google]:http://www.google.co.jp/
 [yahoo]:http://www.yahoo.co.jp/
 ***
+
+## <font color="red">チェックリスト</font>
+- 記法：
+```Markdown
+<!-- 行頭に[ ] or [x]をつける -->
+[ ] 未完了テスク
+[x] 完了したテスク
+```
+- 結果：  
+<!-- 行頭に[ ] or [x]をつける -->
+[ ] 未完了テスク
+[x] 完了したテスク
+***
+
+## <font color="red">テーブル</font>
+- 記法：
+    - 基本記法：
+    ```Markdown
+    <!-- 
+        2行目(アラインメント行)は- or :より構成され、最低3文字が必要
+        -はいくらでもOK。
+    -->
+    |  TH  |  TH  |
+    | ---- | ---- |
+    |  TD  |  TD  |
+    |  TD  |  TD  |
+    ```
+    - 結果：
+
+    |  TH  |  TH  |
+    | ---- | ---- |
+    |  TD  |  TD  |
+    |  TD  |  TD  |
+    - セル内改行：
+    ```Markdown
+    |  TH  |  TH  |
+    | ---- | ---- |
+    |  TD  |  セル内で<br>改行  |
+    ```
+    - 結果：
+    
+    |  TH  |  TH  |
+    | ---- | ---- |
+    |  TD  |  セル内で<br>改行  |
+    - 右寄せ・中央寄せ・左寄せ：
+    ```Markdown
+    <!-- 
+        表の2行目にコロン「:」を入れて調整する
+        ・左寄せの場合 :-- or ---(デフォルトは左寄せ)
+        ・中央寄せの場合 :-:
+        ・右寄せの場合 --:
+    -->
+    | TH 左寄せ | TH 中央寄せ | TH 右寄せ |
+    | :-- | :-: | --: |
+    | TD | TD | TD |
+    | TD | TD | TD |
+    ```
+    - 結果：
+    
+    | TH 左寄せ | TH 中央寄せ | TH 右寄せ |
+    | :-- | :-: | --: |
+    | TD | TD | TD |
+    | TD | TD | TD |
+
+    - ほかのMarkdownとの併用：
+    ```Markdown
+    <!--
+        テーブル内部でも、1行で終わるMarkdownであれば使用可能。
+        太字・斜体は通常は前に空白が必要だが、左端では不要。
+        また、ヘッダ行の先頭に「>」を置くと、テーブル全体が引用となる。
+    -->
+    |`code`    |*italic*                  |
+    |----------|--------------------------|
+    |**bold**  |***bold italic***         |
+    |$ \omega $|[Qiita](http://qiita.com)||
+    ```
+    - 結果：
+
+    |`code`    |*italic*                  |
+    |----------|--------------------------|
+    |**bold**  |***bold italic***         |
+    |$ \omega $|[Qiita](http://qiita.com)||
+
+    - セルの結合：
+    HTMLを使ったほうが早い
