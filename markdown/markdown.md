@@ -189,15 +189,26 @@ ___
 <!--
     Markdownの文書の途中に長いリンクを記述したくない場合は、
     同じリンクの参照を何度も利用する場合は、リンク先への参照を定義することができる
+    ※ リンク定義は独立な段落として定義する必要がある(前の行と一行を開ける)
 -->
 [Google先生][google]  
 その他の文章  
 [Google先生][google]  
-[google]: http://www.google.co.jp/
+[Yahoo][yahoo]  
+その他の文章  
+[Yahoo][yahoo]
+
+[google]:http://www.google.co.jp/
+[yahoo]:http://www.yahoo.co.jp/
 ```
 - 結果：  
-[Gooogle先生][google]  
+[Google先生][google]  
 その他の文章  
-[Gooogle先生][google]  
-[google]: http://www.google.co.jp/
+[Google先生][google]  
+[Yahoo][yahoo]  
+その他の文章  
+[Yahoo][yahoo]
+
+[google]:http://www.google.co.jp/
+[yahoo]:http://www.yahoo.co.jp/
 ***
