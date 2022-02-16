@@ -188,6 +188,9 @@ normal ___italic + bold___ normal
 - 記法：
 ```Markdown
 ![代替テキスト](https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png)
+
+![Google](https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.xxx)
+*** ← 画像にリンクできないケース
 ```
 - 結果：  
 ![Google](https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png)
