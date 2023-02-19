@@ -1,6 +1,8 @@
 # Markdown記法のいろいろお試し
 参考元：[Markdown記法 サンプル集](https://qiita.com/tbpgr/items/989c6badefff69377da7)
 
+※ VSCodeでMarkdownをプレビューする方法：Ctrl + kを押して、vを押す
+
 ## <font color="red">見出し</font>
 - 記法：
 ```Markdown
